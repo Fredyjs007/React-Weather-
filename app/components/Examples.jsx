@@ -4,7 +4,7 @@
     return (
       <div>
         <h3>Examples</h3>
-        <P>Welcome to examples page!</P>
+        <p>Welcome to examples page!</p>
       </div>
     )
   };

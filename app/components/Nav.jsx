@@ -5,7 +5,13 @@
     onSearch: function (e) {
       e.preventDefault();
 
-      alert('In Production!');
+      var location = this.refs.search.value;
+      var encodedLocation = encodeURIComponent(location);
+
+      if (location.length > 0) {
+        this.refs.search.value = '';
+        window.location.hash = '#/?location=' + encodedLocation;
+      }
     },
     render: function () {
       return (
@@ -28,7 +34,7 @@
             <form onSubmit={this.onSearch}>
               <ul className="menu">
                 <li>
-                  <input type="search" placeholder="Search weather by city"/>
+                  <input type="search" placeholder="Search weather by city" ref="search"/>
                 </li>
                 <li>
                   <input type="submit" className="button" value="Get Weather"/>
